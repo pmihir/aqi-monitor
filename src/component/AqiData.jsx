@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import chartUtils from '../utils/chartUtils';
 import Legends from './Legends';
 import { LEGENDS, options } from '../constants/chart';
-const ws = new WebSocket('ws://city-ws.herokuapp.com/');
+const ws = new WebSocket('wss://city-ws.herokuapp.com/');
 
 const AqiData = () => {
   const [data, setData] = useState(null);
