@@ -1,5 +1,7 @@
 const CITY = ['Mumbai', 'Bengaluru', 'Delhi', 'Kolkata', 'Bhubaneswar', 'Chennai', 'Pune', 'Hyderabad',
   'Lucknow', 'Indore', 'Jaipur', 'Chandigarh'];
+const tableData = {};
+CITY.forEach((item) => tableData[item] = { aqi: 0 });
 const INITIAL_DATA = new Array(CITY.length).fill(0);
 const COLOR_DATA = new Array(CITY.length).fill('#00FF00');
 
@@ -8,6 +10,10 @@ const chartUtils = (data) => {
     const index = CITY.findIndex(city => city === item.city);
     INITIAL_DATA[index] = item.aqi.toFixed(2);
     COLOR_DATA[index] = getChartColor(item.aqi);
+    tableData[item.city] = {
+      aqi: item.aqi.toFixed(2),
+      color: getChartColor(item.aqi)
+    }
   });
 
   const chartData = {
@@ -22,7 +28,7 @@ const chartUtils = (data) => {
       },
     ],
   };
-  return chartData;
+  return [tableData, chartData];
 }
 
 const getChartColor = aqi => {

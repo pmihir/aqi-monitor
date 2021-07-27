@@ -1,0 +1,61 @@
+.aqi-header {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+.table-data {
+  display: flex;
+}
+.table-data-wrapper {
+  border: 1px solid lightgray;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  /* padding: 2rem; */
+  row-gap: 1rem;
+  padding: 1rem 1rem 1rem 0;
+}
+.city {
+  flex-grow: 1;
+}
+.aqi-data {
+  color: black;
+  border: 1px solid black;
+  border-radius: 10%;
+  padding: 4px;
+  width: 4rem;
+}
+.top-cities {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.wrapper {
+  display: flex;
+  column-gap: 5rem;
+  padding: 2rem;
+}
+.chart-data-wrapper {
+  width: 70%;
+}
+.data-legends {
+  display: flex;
+  justify-self: center;
+  margin-bottom: 3rem;
+}
+@media (max-width: 425px) {
+  .table-data-wrapper {
+    width: 100%;
+  }
+  .wrapper {
+    flex-wrap: wrap;
+  }
+  .data-legends {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    margin-top: 2rem;
+  }
+  .bar-data {
+    height: 300px;
+    width: 100%;
+  }
+}
